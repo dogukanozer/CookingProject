@@ -10,12 +10,13 @@ import FirebaseAuth
 
 class SettingsViewController: UIViewController {
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
+    // MARK: - Actions
     @IBAction func favoriteButton(_ sender: Any) {
         if Auth.auth().currentUser == nil {
             self.makeLoginAlert(tittleInput: "Error", messegaInput: "Please login.")
@@ -66,5 +67,3 @@ private extension SettingsViewController {
         self.present(alert, animated: true)
     }
 }
-
-    

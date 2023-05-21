@@ -99,7 +99,7 @@ private extension HomeViewController {
             return
         }
         let fireStore = Firestore.firestore().collection("Favorite").document(email)
-        guard let fireStoreDictionary = ["title": title, "urlToImage": urlToImage, "id": id] as? [String : Any] else { return }
+        guard let fireStoreDictionary = ["title": title, "image": urlToImage, "id": id] as? [String : Any] else { return }
         
         fireStore.collection(userID).document().setData(fireStoreDictionary, merge: true) { error in
             if let error = error {

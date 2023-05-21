@@ -10,15 +10,18 @@ import Lottie
 
 class DetailsViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var summaryLabel: UILabel!
+    // MARK: - Outles
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var summaryLabel: UILabel!
     
+    // MARK: - Properties
     private let viewModel = DetailsViewModel()
     var searchResultModel: ResultModel?
     var imageUrl: String?
     private var animationView = LottieAnimationView(name: "anime")
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +31,7 @@ class DetailsViewController: UIViewController {
     }
 }
 
+// MARK: - Helpers
 private extension DetailsViewController {
     
     func addDelegates() {
@@ -52,7 +56,6 @@ private extension DetailsViewController {
     }
     
     func makeAlert(tittleInput: String, messegaInput: String) {
-        
             let alert = UIAlertController(title: tittleInput, message: messegaInput, preferredStyle: UIAlertController.Style.alert)
             let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
             alert.addAction(okButton)
@@ -72,6 +75,7 @@ private extension DetailsViewController {
     }
 }
 
+// MARK: - DetailsViewModelDelegate
 extension DetailsViewController: DetailsViewModelDelegate {
     func didFetchServiceSuccess(detailResponseModel: DetailResponseModel) {
         DispatchQueue.main.async {

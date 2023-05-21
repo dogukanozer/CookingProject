@@ -9,9 +9,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var emailText: UITextField!
-    @IBOutlet weak var passwordText: UITextField!
-    
+    // MARK: - Outles
+    @IBOutlet private weak var emailText: UITextField!
+    @IBOutlet private weak var passwordText: UITextField!
     
     // MARK: - Properties
         private let viewModel = LoginViewModel()
@@ -22,9 +22,9 @@ class LoginViewController: UIViewController {
         
         addGestureRecognizer()
         addDelegates()
-        
     }
-
+    
+    // MARK: - Actions
     @IBAction func signUpButton(_ sender: Any) {
         guard let email = emailText.text, let password = passwordText.text else {
                     makeAlert(tittleInput: "Error", messegaInput: "Please enter a valid email or password.")
