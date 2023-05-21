@@ -9,16 +9,12 @@ import UIKit
 
 class HomeViewCell: UITableViewCell {
 
-    
+    // MARK: - Outles
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-    
 }

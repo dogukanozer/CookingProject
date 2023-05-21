@@ -44,6 +44,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapSkipButton(_ sender: Any) {
+        showTabbar()
     }
 }
 // MARK: - Helpers
@@ -67,14 +68,20 @@ private extension LoginViewController {
       @objc func hideKeyboard() {
           view.endEditing(true)
       }
+    
+    func showTabbar() {
+        let tabbarViewController = TabbarViewController(nibName: "TabbarViewController", bundle: nil)
+        let navigationController = UINavigationController(rootViewController: tabbarViewController)
+        let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
+        keyWindow?.rootViewController = navigationController
+    }
   }
 
   // MARK: - LoginViewModelDelegate
   extension LoginViewController: LoginViewModelDelegate {
       
       func didSignInSuccess() {
-          // Bir sonraki sayfaya geçiş yapılmalı.
-          print("didSignInSuccess")
+          showTabbar()
       }
       
       func didSignInFail(message: String) {
