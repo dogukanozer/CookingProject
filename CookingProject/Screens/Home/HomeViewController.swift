@@ -15,11 +15,15 @@ class HomeViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchText: UITextField!
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchingButton: UIButton!
     
     // MARK: - Properties
     private var searchResponseModel: SearchResponseModel?
     private let viewModel = HomeViewModel()
     private var animationView = LottieAnimationView(name: "anime")
+    
+    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -29,6 +33,7 @@ class HomeViewController: UIViewController {
         fechService()
         tableViewRegister()
         setAnimationView()
+        setProperties()
     }
     
     // MARK: - Actions
@@ -58,6 +63,12 @@ private extension HomeViewController {
         animationView.isHidden = false
         view.addSubview(animationView)
     }
+    
+    func setProperties() {
+        searchTextField.layer.cornerRadius = 10
+        searchingButton.layer.cornerRadius = 10
+    }
+
         
     func fechService() {
         animationView.play()

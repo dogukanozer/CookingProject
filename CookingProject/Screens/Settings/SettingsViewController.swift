@@ -9,11 +9,16 @@ import UIKit
 import FirebaseAuth
 
 class SettingsViewController: UIViewController {
-
+    
+    @IBOutlet weak var favoriteButton2: UIButton!
+    @IBOutlet weak var logoutButton2: UIButton!
+    @IBOutlet weak var removeButton: UIButton!
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setProperties()
     }
 
     // MARK: - Actions
@@ -52,6 +57,12 @@ class SettingsViewController: UIViewController {
 
 // MARK: - Helpers
 private extension SettingsViewController {
+    
+    func setProperties() {
+        favoriteButton2.layer.cornerRadius = 12
+        logoutButton2.layer.cornerRadius = 12
+        removeButton.layer.cornerRadius = 12
+    }
     
     func makeLoginAlert(tittleInput: String, messegaInput: String) {
         let alert = UIAlertController(title: tittleInput, message: messegaInput, preferredStyle: UIAlertController.Style.alert)

@@ -12,6 +12,11 @@ class LoginViewController: UIViewController {
     // MARK: - Outles
     @IBOutlet private weak var emailText: UITextField!
     @IBOutlet private weak var passwordText: UITextField!
+    @IBOutlet private weak var textFieldSubView: UIView!
+    @IBOutlet private weak var passswordSubView: UIView!
+    @IBOutlet private weak var signInButton: UIButton!
+    @IBOutlet private weak var signUpButton: UIButton!
+    @IBOutlet private weak var skipButton: UIButton!
     
     // MARK: - Properties
         private let viewModel = LoginViewModel()
@@ -22,6 +27,7 @@ class LoginViewController: UIViewController {
         
         addGestureRecognizer()
         addDelegates()
+        setProperties()
     }
     
     // MARK: - Actions
@@ -68,6 +74,14 @@ private extension LoginViewController {
       @objc func hideKeyboard() {
           view.endEditing(true)
       }
+    
+    func setProperties() {
+        textFieldSubView.layer.cornerRadius = 12
+        passswordSubView.layer.cornerRadius = 12
+        signInButton.layer.cornerRadius = 24
+        signUpButton.layer.cornerRadius = 24
+        skipButton.layer.cornerRadius = 8
+    }
     
     func showTabbar() {
         let tabbarViewController = TabbarViewController(nibName: "TabbarViewController", bundle: nil)

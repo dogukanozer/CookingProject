@@ -4,15 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="CookingProject" customModuleProvider="target">
             <connections>
                 <outlet property="searchText" destination="pP5-P9-On6" id="uUh-aN-EBN"/>
+                <outlet property="searchTextField" destination="pP5-P9-On6" id="Gg7-ka-wGW"/>
+                <outlet property="searchingButton" destination="ZFE-24-lrE" id="uRA-f3-bvH"/>
                 <outlet property="tableView" destination="xBB-oh-FNV" id="qQi-n8-hVn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,13 +26,13 @@
                     <rect key="frame" x="16" y="59" width="284" height="35"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFE-24-lrE">
                     <rect key="frame" x="308" y="59" width="77.333333333333314" height="35"/>
-                    <color key="backgroundColor" name="AccentColor"/>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.29376506810000003" green="0.34898215529999999" blue="0.95722848179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Search"/>
                     <connections>
@@ -41,11 +41,11 @@
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xBB-oh-FNV">
                     <rect key="frame" x="0.0" y="102" width="393" height="684"/>
-                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <color key="backgroundColor" red="0.1345351934" green="0.14670246840000001" blue="0.17377001049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBrownColor"/>
+            <color key="backgroundColor" red="0.1345351934" green="0.14670246840000001" blue="0.17377001049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="xBB-oh-FNV" firstAttribute="top" secondItem="ZFE-24-lrE" secondAttribute="bottom" constant="8" symbolic="YES" id="0e4-AO-R5p"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xBB-oh-FNV" secondAttribute="bottom" constant="32" id="4K3-6Q-UCj"/>
@@ -61,12 +61,4 @@
             <point key="canvasLocation" x="119.84732824427481" y="20.422535211267608"/>
         </view>
     </objects>
-    <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
